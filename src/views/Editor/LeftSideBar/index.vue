@@ -22,7 +22,7 @@ const activeName = ref('componentList')
 .left-bar-wrapper{
     padding: 8px;
     .el-tabs{
-        &::v-deep .el-tabs__nav{
+        :deep(.el-tabs__nav){
             margin-left: 50px;
         }
     }
