@@ -1,0 +1,3 @@
+<template>
+  rightBar
+</template>
