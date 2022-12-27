@@ -1,6 +1,6 @@
 const conponentConfig = {
-	type: 'Iframe',
-	name: 'Iframe',
+	name: 'IframeWidget',
+	label: 'Iframe',
 	picUrl: 'Iframe.png'
 }
 

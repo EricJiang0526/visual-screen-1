@@ -11,7 +11,7 @@
         <LeftSideBar />
       </el-aside>
       <el-main>
-        main
+        <MainScreen></MainScreen>
       </el-main>
       <el-aside width="300px">
         <RightSideBar />
@@ -24,6 +24,7 @@
 import { ref } from 'vue';
 import TopToolbar from './TopToolbar.vue'
 import LeftSideBar from './LeftSideBar/index.vue'
+import MainScreen from './MainScreen/index.vue'
 import RightSideBar from './RightSideBar/index.vue'
 
 const title = ref('default')

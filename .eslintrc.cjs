@@ -29,6 +29,7 @@ module.exports = {
 			{
 				SwitchCase: 1
 			}
-		]
+		],
+		'comma-dangle': ['error', 'never'],
 	}
 }
