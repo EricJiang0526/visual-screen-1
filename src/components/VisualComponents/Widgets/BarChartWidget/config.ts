@@ -19,7 +19,7 @@ const conponentConfig = {
 						component: 'PanelNumberInput',
 						span: 12,
 						props: { min: 1 }
-					},
+					}
 				]
 			},
 			{
@@ -28,15 +28,15 @@ const conponentConfig = {
 					{
 						key: 'left',
 						component: 'PanelNumberInput',
-						span: 12,
+						span: 12
 					},
 					{
 						key: 'top',
 						component: 'PanelNumberInput',
-						span: 12,
-					},
+						span: 12
+					}
 				]
-			},
+			}
 		]
 	}
 }

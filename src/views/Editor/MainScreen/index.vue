@@ -1,11 +1,16 @@
 <template>
-  <div class="main-screen" @drop="drop" @dragenter.prevent @dragover.prevent></div>
+  <div
+    class="main-screen"
+    @drop="drop"
+    @dragenter.prevent
+    @dragover.prevent
+  />
 </template>
 
 <script setup lang="ts">
 
 const drop = (e: DragEvent) => {
-  console.log(e.dataTransfer?.getData('text/plain'));
+	console.log(e.dataTransfer?.getData('text/plain'));
   
 }
 

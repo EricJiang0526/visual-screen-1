@@ -11,7 +11,7 @@
         <LeftSideBar />
       </el-aside>
       <el-main>
-        <MainScreen></MainScreen>
+        <MainScreen />
       </el-main>
       <el-aside width="300px">
         <RightSideBar />

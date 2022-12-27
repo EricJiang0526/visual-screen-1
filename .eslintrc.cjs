@@ -8,12 +8,13 @@ module.exports = {
 		'plugin:vue/vue3-recommended',
 		'plugin:vue/vue3-strongly-recommended',
 		'plugin:@typescript-eslint/recommended',
-		'eslint:recommended',
-		'@vue/eslint-config-typescript'
+		'eslint:recommended'
 	],
 	parserOptions: {
-		ecmaVersion: 'latest'
+		ecmaVersion: 'latest',
+		parser: '@typescript-eslint/parser'
 	},
+	parser: 'vue-eslint-parser',
 	rules: {
 		'vue/multi-word-component-names': 'off',
 		'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -30,6 +31,6 @@ module.exports = {
 				SwitchCase: 1
 			}
 		],
-		'comma-dangle': ['error', 'never'],
+		'comma-dangle': ['error', 'never']
 	}
 }
