@@ -40,40 +40,28 @@
 
 <script lang="ts" setup>
 import { ref, reactive } from 'vue';
+import componentGroupConfig from './componentGroupConfig'
+import { useWidgetConfigStore } from "@/stores/widgetConfig";
 
 const filterText = ref('')
 
 const activeNames = ref([''])
 
-const componentGroupList = reactive([
-	{
-		group: 'Bars',
-		title: '柱状图',
-		components:[
-			{
-				type: 'BarChart',
-				name: '柱状图',
-				picUrl: 'BarChart.png'
-			},
-			{
-				type: 'BarChart22',
-				name: '柱状图22',
-				picUrl: 'Iframe.png'
-			},
-		]
-	},
-	{
-		group: 'Etc',
-		title: '交互类',
-		components:[
-			{
-				type: 'Iframe',
-				name: 'Iframe',
-				picUrl: 'Iframe.png'
-			}
-		]
-	}
-])
+// 获取左侧组件列表
+const widgetConfig = useWidgetConfigStore()
+const componentGroupList: any[] = componentGroupConfig.map(g => ({
+  group: g.group,
+  title: g.title,
+  components: g.components.map(c => {  
+    const comp = widgetConfig.configList.find(item => item.name === c)
+    if (!comp) {
+      return null
+    } else {
+      const { label='', name='', picUrl='404.png' } = comp
+      return { label, name, picUrl }
+    }
+  }).filter(r => r)
+}))
 
 const dragStart = (e: DragEvent, item: Object) => {
 	e.dataTransfer?.setData('text/plain', JSON.stringify(item))

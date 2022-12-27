@@ -9,6 +9,10 @@ import 'element-plus/dist/index.css'
 
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
+import loaders from './components/VisualComponents/loaders'
+const { widgetLoader, configLoader: widgetConfigLoader } = loaders
+
+
 const app = createApp(App)
 
 app.use(createPinia())
@@ -18,4 +22,8 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 	app.component(key, component)
 }
 
+app.use(widgetLoader)
+
 app.mount('#app')
+
+widgetConfigLoader()
