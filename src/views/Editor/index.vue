@@ -6,7 +6,7 @@
       </div>
       <TopToolbar class="top-toolbar" />
     </el-header>
-    <el-container>
+    <el-container class="container">
       <el-aside width="280px">
         <LeftSideBar />
       </el-aside>
@@ -41,6 +41,11 @@ const title = ref('default')
         .top-toolbar{
             height: 50px;
         }
+    }
+    .container{
+      .el-main{
+        height: calc(100vh - 200px);
+      }
     }
 }
 </style>

@@ -4,7 +4,8 @@ const groups = [
 		group: 'Bars',
 		title: '柱状图',
 		components: [
-			'BarChartWidget'
+			'BarChartWidget',
+			'LineChartWidget'
 		]
 	},
 	{

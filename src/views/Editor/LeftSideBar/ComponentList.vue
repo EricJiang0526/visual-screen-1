@@ -20,7 +20,7 @@
             :key="item.type"
             class="component-wrapper"
             draggable="true"
-            @dragstart="dragStart($event, item)"
+            @dragstart.stop="dragStart($event, item)"
           >
             <img
               :src="`src/assets/Thumbnail/${item.picUrl}`"
@@ -64,6 +64,7 @@ const componentGroupList: any[] = componentGroupConfig.map(g => ({
 }))
 
 const dragStart = (e: DragEvent, item: object) => {
+	e.stopPropagation()
 	e.dataTransfer?.setData('text/plain', JSON.stringify(item))
 }
 
@@ -76,9 +77,9 @@ const dragStart = (e: DragEvent, item: object) => {
 .group-wrapper{
     display: flex;
     .component-wrapper{
-        width: 136px;
-        height: 92px;
-        margin: 6px 10px;
+        width: 116px;
+        height: 86px;
+        padding: 6px 10px;
         text-align: center;
         cursor: pointer;
         &:hover{

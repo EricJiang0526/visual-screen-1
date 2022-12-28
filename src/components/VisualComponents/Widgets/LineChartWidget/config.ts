@@ -1,6 +1,6 @@
 const conponentConfig = {
-	name: 'BarChartWidget',
-	label: '柱状图',
+	name: 'LineChartWidget',
+	label: '条形图',
 	picUrl: 'BarChart.png',
 
 	stylePanelConfig: {
