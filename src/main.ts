@@ -27,3 +27,4 @@ app.use(widgetLoader)
 app.mount('#app')
 
 widgetConfigLoader()
+

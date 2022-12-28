@@ -8,9 +8,19 @@
 </template>
 
 <script setup lang="ts">
+import { useScreenStore } from '@/stores/screen'
+
+const screen = useScreenStore()
 
 const drop = (e: DragEvent) => {
-	console.log(e.dataTransfer?.getData('text/plain'));
+	const dragData = e.dataTransfer?.getData('text/plain')
+	if (dragData) {
+		const dragItem = JSON.parse(dragData)
+		screen.addNewElement(dragItem.name)
+		console.log(screen.elements);
+    
+	}
+	
   
 }
 

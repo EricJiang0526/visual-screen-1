@@ -31,6 +31,7 @@ module.exports = {
 				SwitchCase: 1
 			}
 		],
-		'comma-dangle': ['error', 'never']
+		'comma-dangle': ['error', 'never'],
+		'@typescript-eslint/no-explicit-any': 'off'
 	}
 }

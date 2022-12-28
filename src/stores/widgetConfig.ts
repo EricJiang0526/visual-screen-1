@@ -13,5 +13,10 @@ export const useWidgetConfigStore = defineStore('widgetConfig', () => {
 		configList.push(config)
 	}
 
-	return { configList, setConfigList, addConfig }
+	const selectConfigByName = (name:string) => {
+		const row = configList.find(c => c.name === name)
+		return row || null
+	}
+
+	return { configList, setConfigList, addConfig, selectConfigByName }
 })
