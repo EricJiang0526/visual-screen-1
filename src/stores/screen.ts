@@ -7,33 +7,24 @@ const widgetConfig = useWidgetConfigStore()
 const basePropKeys = ['height', 'width', 'left', 'top']
 
 const panelConfigDeconstructor = (panelConfig: any) => {
-	const baseProps = {}
-	const exProps = {}
+	const allProps = {}
 	panelConfig?.children.forEach((child: any) => {
 		if (child.columns) {
 			child.columns.forEach((col: any) => {
-				if (basePropKeys.includes(col.key)) {
-					Object.assign(baseProps, {
-						[col.key]: col.defaultValue
-					})
-				} else {
-					Object.assign(exProps, {
-						[col.key]: col.defaultValue
-					})
-				}
-				
+				Object.assign(allProps, {
+					[col.key]: col.defaultValue
+				})
 			})
 		}
 	})
-	return {
-		baseProps,
-		exProps
-	}
+	return allProps
 }
 
 export const useScreenStore = defineStore('screen', () => {
 
 	const elements: any[] = reactive([])
+
+	const currentElementId = ref('')
   
 	const addNewElement = (elementName: string) => {
 		const id = generateId()
@@ -46,11 +37,54 @@ export const useScreenStore = defineStore('screen', () => {
 			...allProps
 		}
 		elements.push(element)
+		setCurrentElement(id)
+		return element
 	}
 
 	const getAllElements = () => {
 		return elements
 	}
 
-	return { elements, addNewElement, getAllElements }
+	const setCurrentElement = (id: string) => {
+		currentElementId.value = id
+	}
+
+	const getElementById = (id: string = currentElementId.value) => {
+		return elements.find(ele => ele.id === id)
+	}
+
+	const getCurrentElement = () => {
+		return getElementById(currentElementId.value)
+	}
+
+	const updateElementById = (id: string, update: any) => {
+		let element = getElementById(id)
+		Object.keys(update).forEach(k => {
+			element = {
+				...element,
+				...update[k]
+			}
+		})
+		return element
+	}
+
+	const updateCurrentElement = (update: any) => {
+		updateElementById(currentElementId.value, update)
+	}
+
+	const handleCurrentElement = (id: string, update: any) => {
+		currentElementId.value = id
+		updateCurrentElement(update)
+	}
+
+	return {
+		addNewElement,
+		getAllElements,
+		setCurrentElement,
+		getElementById,
+		getCurrentElement,
+		updateElementById,
+		updateCurrentElement,
+		handleCurrentElement
+	}
 })

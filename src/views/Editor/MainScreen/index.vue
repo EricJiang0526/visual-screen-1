@@ -20,6 +20,7 @@ const drop = (e: DragEvent) => {
 	if (dragData) {
 		const dragItem = JSON.parse(dragData)
 		screen.addNewElement(dragItem.name)
+		console.log('e', e);
     
 	}
 	
@@ -33,5 +34,7 @@ const drop = (e: DragEvent) => {
   width: 100%;
   height: 100%;
   overflow: scroll;
+  background-color: #4b505f;
+  box-sizing: border-box;
 }
 </style>

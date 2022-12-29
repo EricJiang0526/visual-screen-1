@@ -10,6 +10,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
+
 const props = defineProps<{
   params: any
 }>()
@@ -17,7 +18,7 @@ const props = defineProps<{
 console.log('ele', props.params);
 
 const style = computed(() => {
-	const { width, height, left, top } = props.params.baseProps
+	const { width, height, left, top } = props.params
 	console.log(width, height, left, top);
   
 	return {
@@ -27,6 +28,7 @@ const style = computed(() => {
 		top: `${top}px`
 	}
 })
+
 
 </script>
 

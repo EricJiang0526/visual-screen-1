@@ -3,16 +3,26 @@
     class="screen-canvas"
     :style="canvasStyle"
   >
-    <ElementRenderer
+    <!-- <ElementRenderer
       v-for="item in screen.getAllElements()"
       :key="item.id"
       :params="item"
-    />
+    /> -->
+    <DragResize
+      v-for="item in screen.getAllElements()"
+      :key="item.id"
+      style="position: absolute"
+      :params="item"
+      :active="isActive(item.id)"
+    >
+      <component :is="item.type" />
+    </DragResize>
   </div>
 </template>
 
 <script setup lang="ts">
 import ElementRenderer from './ElementRenderer.vue'
+import DragResize from './DragResize.vue'
 import { computed } from 'vue';
 import { useScreenStore } from '@/stores/screen'
 
@@ -24,6 +34,10 @@ const canvasStyle = computed(() => {
 		height: '920px'
 	}
 })
+
+const isActive = (id: string) => {
+	return screen.getCurrentElement().id === id
+}
 </script>
 
 <style lang="scss" scoped>
