@@ -1,3 +1,3 @@
-import Iframe from './index.vue'
+import Iframe from './index.vue';
 
-export default Iframe
+export default Iframe;

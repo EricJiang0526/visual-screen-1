@@ -1,20 +1,14 @@
-
 const groups = [
 	{
 		group: 'Bars',
 		title: '柱状图',
-		components: [
-			'BarChartWidget',
-			'LineChartWidget'
-		]
+		components: ['BarChartWidget', 'LineChartWidget']
 	},
 	{
 		group: 'Mutual',
 		title: '交互类',
-		components: [
-			'IframeWidget'
-		]
+		components: ['IframeWidget']
 	}
-]
+];
 
-export default groups
+export default groups;

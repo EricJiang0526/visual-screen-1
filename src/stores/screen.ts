@@ -4,7 +4,7 @@ import generateId from '@/utils/generateId';
 import { useWidgetConfigStore } from '@/stores/widgetConfig';
 const widgetConfig = useWidgetConfigStore();
 
-const basePropKeys = ['height', 'width', 'left', 'top'];
+// const basePropKeys = ['height', 'width', 'left', 'top'];
 
 const panelConfigDeconstructor = (panelConfig: any) => {
 	const allProps = {};
@@ -66,13 +66,17 @@ export const useScreenStore = defineStore('screen', () => {
 	};
 
 	const updateElementById = (id: string, update: any) => {
-		let element = getElementById(id);
+		const element = getElementById(id);
 		Object.keys(update).forEach((k) => {
-			element = {
-				...element,
-				...update[k]
-			};
+			// element = {
+			// 	...update[k],
+			// 	...element
+			// };
+			// console.log('update', update);
+
+			element[k] = update[k];
 		});
+
 		return element;
 	};
 

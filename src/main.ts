@@ -1,30 +1,28 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
-import App from './App.vue'
-import router from './router'
+import App from './App.vue';
+import router from './router';
 
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css';
 
-import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 
-import loaders from './components/VisualComponents/loaders'
-const { widgetLoader, configLoader: widgetConfigLoader } = loaders
+import loaders from './components/VisualComponents/loaders';
+const { widgetLoader, configLoader: widgetConfigLoader } = loaders;
 
+const app = createApp(App);
 
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-app.use(ElementPlus)
+app.use(createPinia());
+app.use(router);
+app.use(ElementPlus);
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-	app.component(key, component)
+	app.component(key, component);
 }
 
-app.use(widgetLoader)
+app.use(widgetLoader);
 
-app.mount('#app')
+app.mount('#app');
 
-widgetConfigLoader()
-
+widgetConfigLoader();

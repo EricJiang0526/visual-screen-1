@@ -1,3 +1,1 @@
-<template>
-  ScreensManagement
-</template>
+<template>ScreensManagement</template>

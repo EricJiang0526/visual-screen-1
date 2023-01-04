@@ -7,5 +7,10 @@ export const useMouseStore = defineStore('mouse', () => {
 	const x = ref(0);
 	const y = ref(0);
 
-	return { useMouse, x, y };
+	const moveMouse = (newX: number, newY: number) => {
+		x.value = newX;
+		y.value = newY;
+	};
+
+	return { useMouse, x, y, moveMouse };
 });

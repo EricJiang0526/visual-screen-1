@@ -43,6 +43,6 @@ const conponentConfig = {
 			}
 		]
 	}
-}
+};
 
-export default conponentConfig
+export default conponentConfig;

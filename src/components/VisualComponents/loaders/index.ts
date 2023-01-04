@@ -1,7 +1,7 @@
-import widgetLoader from './widgetLoader'
-import configLoader from './configLoader'
+import widgetLoader from './widgetLoader';
+import configLoader from './configLoader';
 
 export default {
 	widgetLoader,
 	configLoader
-}
+};

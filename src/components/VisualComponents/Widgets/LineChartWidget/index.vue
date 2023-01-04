@@ -1,3 +1,1 @@
-<template>
-  LineChart
-</template>
+<template>LineChart</template>

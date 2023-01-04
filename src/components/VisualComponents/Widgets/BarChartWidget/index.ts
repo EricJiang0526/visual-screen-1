@@ -1,3 +1,3 @@
-import BarChart from './index.vue'
+import BarChart from './index.vue';
 
-export default BarChart
+export default BarChart;

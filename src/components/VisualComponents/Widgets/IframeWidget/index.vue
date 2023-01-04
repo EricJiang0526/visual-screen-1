@@ -1,3 +1,1 @@
-<template>
-    Iframe
-</template>
+<template>Iframe</template>

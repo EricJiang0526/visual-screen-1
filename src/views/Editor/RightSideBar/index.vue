@@ -1,3 +1,1 @@
-<template>
-  rightBarTodo
-</template>
+<template>rightBarTodo</template>
